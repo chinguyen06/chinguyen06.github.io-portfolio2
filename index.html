@@ -1,73 +1,126 @@
-import { Code, Database, Palette, Film, Sparkles, PenTool } from "lucide-react";
-import { type ReactNode } from "react";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Retro Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-interface SkillItem {
-  name: string;
-  icon: ReactNode;
-  category: "code" | "design";
-  level: number; // 1-5
-}
+  <style>
+    body {
+      margin: 0;
+      background-color: #0d0d0d;
+      color: #f5f5f5;
+      font-family: "Courier New", monospace;
+    }
 
-const skills: SkillItem[] = [
-  { name: "Python", icon: <Code className="w-5 h-5" />, category: "code", level: 4 },
-  { name: "SQL", icon: <Database className="w-5 h-5" />, category: "code", level: 4 },
-  { name: "Photoshop", icon: <Palette className="w-5 h-5" />, category: "design", level: 4 },
-  { name: "Procreate", icon: <PenTool className="w-5 h-5" />, category: "design", level: 3 },
-  { name: "After Effects", icon: <Film className="w-5 h-5" />, category: "design", level: 3 },
-  { name: "Canva", icon: <Sparkles className="w-5 h-5" />, category: "design", level: 5 },
-];
+    .container {
+      max-width: 700px;
+      margin: 80px auto;
+      padding: 20px;
+    }
 
-const SkillBar = ({ level }: { level: number }) => (
-  <div className="flex gap-1">
-    {Array.from({ length: 5 }).map((_, i) => (
-      <div
-        key={i}
-        className={`w-3 h-3 border ${
-          i < level
-            ? "bg-primary border-primary"
-            : "border-muted-foreground bg-transparent"
-        }`}
-      />
-    ))}
-  </div>
-);
+    .title {
+      text-align: center;
+      color: #ffb703;
+      text-shadow: 0 0 10px #ffb703;
+      margin-bottom: 40px;
+    }
 
-const RetroSkills = () => {
-  return (
-    <section id="skills" className="py-20 px-4 retro-grid">
-      <div className="max-w-3xl mx-auto">
-        <h2 className="font-pixel text-lg md:text-xl text-primary glow-amber mb-10 text-center">
-          {">"} Skills_
-        </h2>
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {skills.map((skill) => (
-            <div
-              key={skill.name}
-              className={`pixel-border bg-card p-4 flex items-center justify-between hover:bg-muted transition-colors ${
-                skill.category === "design" ? "border-accent glow-box-teal" : ""
-              }`}
-            >
-              <div className="flex items-center gap-3">
-                <span className={skill.category === "code" ? "text-primary" : "text-accent"}>
-                  {skill.icon}
-                </span>
-                <span className="font-mono text-foreground text-sm">{skill.name}</span>
-              </div>
-              <SkillBar level={skill.level} />
-            </div>
-          ))}
-        </div>
+    .skill {
+      border: 2px solid #555;
+      padding: 15px;
+      background-color: #1a1a1a;
+      transition: 0.3s;
+    }
 
-        <div className="mt-6 text-center">
-          <p className="font-mono text-xs text-muted-foreground">
-            [■ = proficiency level • amber = code • teal = design]
-          </p>
-        </div>
+    .skill:hover {
+      transform: translateY(-5px);
+    }
+
+    .skill span {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .skill.code { border-color: #ffb703; }
+    .skill.design { border-color: #00f5d4; }
+
+    .bar {
+      height: 10px;
+      background-color: #333;
+      border: 1px solid #555;
+    }
+
+    .fill { height: 100%; }
+
+    .level-1 { width: 20%; }
+    .level-2 { width: 40%; }
+    .level-3 { width: 60%; }
+    .level-4 { width: 80%; }
+    .level-5 { width: 100%; }
+
+    .code .fill { background-color: #ffb703; }
+    .design .fill { background-color: #00f5d4; }
+
+    .legend {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 12px;
+      color: #888;
+    }
+  </style>
+</head>
+
+<body>
+
+  <section class="container">
+    <h1 class="title">> Skills_</h1>
+
+    <div class="skills-grid">
+
+      <div class="skill code">
+        <span>Python</span>
+        <div class="bar"><div class="fill level-4"></div></div>
       </div>
-    </section>
-  );
-};
 
-export default RetroSkills;
+      <div class="skill code">
+        <span>SQL</span>
+        <div class="bar"><div class="fill level-4"></div></div>
+      </div>
+
+      <div class="skill design">
+        <span>Photoshop</span>
+        <div class="bar"><div class="fill level-4"></div></div>
+      </div>
+
+      <div class="skill design">
+        <span>Procreate</span>
+        <div class="bar"><div class="fill level-3"></div></div>
+      </div>
+
+      <div class="skill design">
+        <span>After Effects</span>
+        <div class="bar"><div class="fill level-3"></div></div>
+      </div>
+
+      <div class="skill design">
+        <span>Canva</span>
+        <div class="bar"><div class="fill level-5"></div></div>
+      </div>
+
+    </div>
+
+    <p class="legend">
+      [■ = proficiency level • amber = code • teal = design]
+    </p>
+  </section>
+
+</body>
+</html>
 
