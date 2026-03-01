@@ -1,0 +1,73 @@
+import { Code, Database, Palette, Film, Sparkles, PenTool } from "lucide-react";
+import { type ReactNode } from "react";
+
+interface SkillItem {
+  name: string;
+  icon: ReactNode;
+  category: "code" | "design";
+  level: number; // 1-5
+}
+
+const skills: SkillItem[] = [
+  { name: "Python", icon: <Code className="w-5 h-5" />, category: "code", level: 4 },
+  { name: "SQL", icon: <Database className="w-5 h-5" />, category: "code", level: 4 },
+  { name: "Photoshop", icon: <Palette className="w-5 h-5" />, category: "design", level: 4 },
+  { name: "Procreate", icon: <PenTool className="w-5 h-5" />, category: "design", level: 3 },
+  { name: "After Effects", icon: <Film className="w-5 h-5" />, category: "design", level: 3 },
+  { name: "Canva", icon: <Sparkles className="w-5 h-5" />, category: "design", level: 5 },
+];
+
+const SkillBar = ({ level }: { level: number }) => (
+  <div className="flex gap-1">
+    {Array.from({ length: 5 }).map((_, i) => (
+      <div
+        key={i}
+        className={`w-3 h-3 border ${
+          i < level
+            ? "bg-primary border-primary"
+            : "border-muted-foreground bg-transparent"
+        }`}
+      />
+    ))}
+  </div>
+);
+
+const RetroSkills = () => {
+  return (
+    <section id="skills" className="py-20 px-4 retro-grid">
+      <div className="max-w-3xl mx-auto">
+        <h2 className="font-pixel text-lg md:text-xl text-primary glow-amber mb-10 text-center">
+          {">"} Skills_
+        </h2>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {skills.map((skill) => (
+            <div
+              key={skill.name}
+              className={`pixel-border bg-card p-4 flex items-center justify-between hover:bg-muted transition-colors ${
+                skill.category === "design" ? "border-accent glow-box-teal" : ""
+              }`}
+            >
+              <div className="flex items-center gap-3">
+                <span className={skill.category === "code" ? "text-primary" : "text-accent"}>
+                  {skill.icon}
+                </span>
+                <span className="font-mono text-foreground text-sm">{skill.name}</span>
+              </div>
+              <SkillBar level={skill.level} />
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-6 text-center">
+          <p className="font-mono text-xs text-muted-foreground">
+            [■ = proficiency level • amber = code • teal = design]
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default RetroSkills;
+
