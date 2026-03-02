@@ -326,3 +326,48 @@ button{
   }
 
 }
+/* ================= MULTI METEOR ================= */
+
+body::after,
+body::before{
+  pointer-events:none;
+}
+
+body::after{
+  content:"";
+  position:fixed;
+  top:-150px;
+  left:75%;
+  width:2px;
+  height:120px;
+  background:linear-gradient(120deg, rgba(255,46,166,0.9), transparent 60%);
+  box-shadow:0 0 20px rgba(255,46,166,0.9);
+  animation:meteor1 7s linear infinite;
+  z-index:-1;
+}
+
+@keyframes meteor1{
+  0%{transform:translate(0,0) rotate(25deg);opacity:0;}
+  10%{opacity:1;}
+  100%{transform:translate(-400px,900px) rotate(25deg);opacity:0;}
+}
+
+/* meteor 2 */
+.grid-bg::after{
+  content:"";
+  position:fixed;
+  top:-200px;
+  left:40%;
+  width:2px;
+  height:100px;
+  background:linear-gradient(120deg, #ffffff, transparent 60%);
+  box-shadow:0 0 15px #ffffff;
+  animation:meteor2 9s linear infinite;
+  z-index:-1;
+}
+
+@keyframes meteor2{
+  0%{transform:translate(0,0) rotate(25deg);opacity:0;}
+  10%{opacity:1;}
+  100%{transform:translate(-300px,1000px) rotate(25deg);opacity:0;}
+}
