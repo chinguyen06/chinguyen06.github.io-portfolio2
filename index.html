@@ -1,126 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Retro Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nguyen Mai Chi | Portfolio</title>
 
-  <style>
-    body {
-      margin: 0;
-      background-color: #0d0d0d;
-      color: #f5f5f5;
-      font-family: "Courier New", monospace;
-    }
-
-    .container {
-      max-width: 700px;
-      margin: 80px auto;
-      padding: 20px;
-    }
-
-    .title {
-      text-align: center;
-      color: #ffb703;
-      text-shadow: 0 0 10px #ffb703;
-      margin-bottom: 40px;
-    }
-
-    .skills-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
-
-    .skill {
-      border: 2px solid #555;
-      padding: 15px;
-      background-color: #1a1a1a;
-      transition: 0.3s;
-    }
-
-    .skill:hover {
-      transform: translateY(-5px);
-    }
-
-    .skill span {
-      display: block;
-      margin-bottom: 10px;
-    }
-
-    .skill.code { border-color: #ffb703; }
-    .skill.design { border-color: #00f5d4; }
-
-    .bar {
-      height: 10px;
-      background-color: #333;
-      border: 1px solid #555;
-    }
-
-    .fill { height: 100%; }
-
-    .level-1 { width: 20%; }
-    .level-2 { width: 40%; }
-    .level-3 { width: 60%; }
-    .level-4 { width: 80%; }
-    .level-5 { width: 100%; }
-
-    .code .fill { background-color: #ffb703; }
-    .design .fill { background-color: #00f5d4; }
-
-    .legend {
-      text-align: center;
-      margin-top: 30px;
-      font-size: 12px;
-      color: #888;
-    }
-  </style>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <section class="container">
-    <h1 class="title">> Skills_</h1>
+<div class="scanline"></div>
 
-    <div class="skills-grid">
+<header>
+  <div class="logo">~/portfolio</div>
+  <nav>
+    <a href="#about">01. about</a>
+    <a href="#skills">02. skills</a>
+    <a href="#projects">03. projects</a>
+    <a href="#contact">04. contact</a>
+  </nav>
+</header>
 
-      <div class="skill code">
-        <span>Python</span>
-        <div class="bar"><div class="fill level-4"></div></div>
+<section class="hero">
+  <p class="init">// PORTFOLIO.INIT()</p>
+
+  <h1 class="glitch" data-text="Nguyen Mai Chi">
+    Hello, I'm <br>
+    <span class="neon">Nguyen Mai Chi</span>
+  </h1>
+
+  <h2><span id="typing"></span><span class="cursor">|</span></h2>
+
+  <p class="description">
+    Foreign Trade University graduate specializing in Financial Analysis & Investment.
+    Passionate about capital markets, quantitative analysis and building data-driven strategies.
+  </p>
+
+  <div class="buttons">
+    <a href="#projects" class="btn">VIEW_PROJECTS()</a>
+    <a href="#contact" class="btn-outline">CONTACT_ME()</a>
+  </div>
+</section>
+
+<!-- SKILLS MATRIX -->
+<section id="skills" class="section">
+  <h2 class="section-title">## skills_matrix</h2>
+
+  <div class="skills-grid">
+    
+    <div>
+      <p class="comment">// core competencies</p>
+
+      <div class="skill">
+        <span>Financial Modeling</span>
+        <span>90%</span>
+        <div class="bar"><div style="width:90%"></div></div>
       </div>
 
-      <div class="skill code">
-        <span>SQL</span>
-        <div class="bar"><div class="fill level-4"></div></div>
+      <div class="skill">
+        <span>Equity Valuation</span>
+        <span>85%</span>
+        <div class="bar"><div style="width:85%"></div></div>
       </div>
 
-      <div class="skill design">
-        <span>Photoshop</span>
-        <div class="bar"><div class="fill level-4"></div></div>
-      </div>
-
-      <div class="skill design">
-        <span>Procreate</span>
-        <div class="bar"><div class="fill level-3"></div></div>
-      </div>
-
-      <div class="skill design">
-        <span>After Effects</span>
-        <div class="bar"><div class="fill level-3"></div></div>
-      </div>
-
-      <div class="skill design">
-        <span>Canva</span>
-        <div class="bar"><div class="fill level-5"></div></div>
+      <div class="skill">
+        <span>Quantitative Analysis</span>
+        <span>80%</span>
+        <div class="bar"><div style="width:80%"></div></div>
       </div>
 
     </div>
 
-    <p class="legend">
-      [■ = proficiency level • amber = code • teal = design]
-    </p>
-  </section>
+    <div>
+      <p class="comment">// tools & technologies</p>
 
+      <div class="tools">
+        <span>Excel</span>
+        <span>Python</span>
+        <span>SQL</span>
+        <span>Power BI</span>
+        <span>SmartPLS</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section">
+  <h2 class="section-title">## contact_me</h2>
+
+  <form action="https://formspree.io/f/YOUR_ID" method="POST" class="contact-form">
+    <input type="text" name="name" placeholder="> Your Name" required>
+    <input type="email" name="email" placeholder="> Your Email" required>
+    <textarea name="message" rows="5" placeholder="> Your Message"></textarea>
+    <button type="submit" class="btn">SEND_MESSAGE()</button>
+  </form>
+
+</section>
+
+<script src="script.js"></script>
 </body>
 </html>
 
