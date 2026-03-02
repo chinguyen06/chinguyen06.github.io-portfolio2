@@ -13,7 +13,7 @@ body{
   overflow-x:hidden;
 }
 
-/* ================= BACKGROUND ================= */
+/* ================= GRID BACKGROUND ================= */
 .grid-bg{
   position:fixed;
   width:100%;
@@ -27,18 +27,20 @@ body{
 
 /* ================= HEADER ================= */
 header{
+  position:fixed;
+  top:0;
+  width:100%;
   display:flex;
   justify-content:space-between;
   align-items:center;
   padding:20px 10%;
-  position:fixed;
-  width:100%;
   background:#0c0a16;
-  z-index:10;
+  z-index:100;
 }
 
 .logo{
   color:#ff2ea6;
+  font-size:18px;
 }
 
 nav a{
@@ -68,9 +70,17 @@ nav a:hover{
   gap:60px;
 }
 
+/* BIG TITLE */
+.hero h1{
+  font-size:clamp(48px,6vw,80px);
+  line-height:1.1;
+  margin-bottom:20px;
+}
+
 .neon{
   color:#ff2ea6;
-  text-shadow:0 0 10px #ff2ea6;
+  font-size:clamp(60px,7vw,90px);
+  text-shadow:0 0 15px rgba(255,46,166,0.7);
 }
 
 .typing-line{
@@ -99,7 +109,6 @@ nav a:hover{
   display:flex;
   gap:20px;
   flex-wrap:wrap;
-  margin-top:15px;
 }
 
 .btn{
@@ -130,26 +139,59 @@ nav a:hover{
 
 /* ================= HERO IMAGE ================= */
 .hero-image img{
-  width:300px;
+  width:320px;
   border-radius:12px;
   border:2px solid #ff2ea6;
   box-shadow:0 0 25px rgba(255,46,166,0.6);
 }
 
-/* ================= SECTION ================= */
+/* ================= SECTIONS ================= */
 .section{
   padding:120px 10%;
 }
 
 .section-title{
   color:#ff2ea6;
-  margin-bottom:40px;
+  margin-bottom:50px;
+  font-size:22px;
+}
+
+/* ================= ABOUT GRID ================= */
+.about-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+  align-items:flex-start;
+}
+
+.about-text p{
+  margin-bottom:20px;
+  line-height:1.7;
+  color:#aaa;
+}
+
+/* TERMINAL BOX */
+.terminal-box{
+  background:#111;
+  border:1px solid #222;
+  padding:20px;
+  font-size:0.9rem;
+}
+
+.terminal-command{
+  color:#ff2ea6;
+  margin-bottom:10px;
+}
+
+.terminal-box pre{
+  white-space:pre-wrap;
+  color:#ccc;
 }
 
 /* ================= SKILLS ================= */
 .skills-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns:repeat(auto-fit, minmax(320px,1fr));
   gap:40px;
 }
 
@@ -158,14 +200,12 @@ nav a:hover{
   position:relative;
 }
 
-/* tên skill */
 .skill span:first-child{
   display:inline-block;
   margin-bottom:6px;
   font-size:0.9rem;
 }
 
-/* percent bên phải */
 .percent{
   position:absolute;
   right:0;
@@ -174,7 +214,6 @@ nav a:hover{
   font-size:0.9rem;
 }
 
-/* progress bar */
 .bar{
   background:#222;
   height:8px;
@@ -189,10 +228,31 @@ nav a:hover{
   box-shadow:0 0 8px rgba(255,46,166,0.6);
 }
 
+/* ================= TOOLS ================= */
+.tools-list{
+  display:flex;
+  flex-wrap:wrap;
+  gap:15px;
+  margin-top:30px;
+}
+
+.tools-list span{
+  border:1px solid #ff2ea6;
+  padding:8px 16px;
+  font-size:0.8rem;
+  color:#ff2ea6;
+  transition:0.3s;
+}
+
+.tools-list span:hover{
+  background:#ff2ea6;
+  color:#0c0a16;
+}
+
 /* ================= PROJECTS ================= */
 .projects-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
   gap:30px;
 }
 
@@ -241,6 +301,10 @@ nav a:hover{
   border-color:#ff2ea6;
 }
 
+button{
+  cursor:pointer;
+}
+
 /* ================= RESPONSIVE ================= */
 @media(max-width:900px){
 
@@ -250,52 +314,15 @@ nav a:hover{
   }
 
   .hero-image img{
-    width:220px;
+    width:240px;
+  }
+
+  .about-grid{
+    grid-template-columns:1fr;
   }
 
   nav a{
     margin-left:15px;
   }
 
-}
-/* ================= ABOUT SECTION ================= */
-
-.about-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:60px;
-  align-items:flex-start;
-}
-
-.about-text p{
-  margin-bottom:20px;
-  line-height:1.7;
-  color:#aaa;
-}
-
-/* terminal style */
-.terminal-box{
-  background:#111;
-  border:1px solid #222;
-  padding:20px;
-  font-size:0.9rem;
-  position:relative;
-}
-
-.terminal-command{
-  color:#ff2ea6;
-  margin-bottom:10px;
-}
-
-.terminal-box pre{
-  color:#ccc;
-  font-family:'Share Tech Mono', monospace;
-  white-space:pre-wrap;
-}
-
-/* responsive */
-@media(max-width:900px){
-  .about-grid{
-    grid-template-columns:1fr;
-  }
 }
