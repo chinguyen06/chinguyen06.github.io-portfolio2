@@ -9,9 +9,9 @@
 <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body spellcheck="false">
 
-<div class="scanline"></div>
+<div class="grid-bg"></div>
 
 <header>
   <div class="logo">~/portfolio</div>
@@ -23,19 +23,22 @@
   </nav>
 </header>
 
-<section class="hero">
+<!-- HERO -->
+<section class="hero" id="about">
   <p class="init">// PORTFOLIO.INIT()</p>
 
-  <h1 class="glitch" data-text="Nguyen Mai Chi">
+  <h1>
     Hello, I'm <br>
     <span class="neon">Nguyen Mai Chi</span>
   </h1>
 
-  <h2><span id="typing"></span><span class="cursor">|</span></h2>
+  <h2>
+    <span id="typing"></span><span class="cursor">|</span>
+  </h2>
 
   <p class="description">
     Foreign Trade University graduate specializing in Financial Analysis & Investment.
-    Passionate about capital markets, quantitative analysis and building data-driven strategies.
+    Passionate about capital markets, quantitative modeling, and building data-driven strategies.
   </p>
 
   <div class="buttons">
@@ -44,33 +47,28 @@
   </div>
 </section>
 
-<!-- SKILLS MATRIX -->
+<!-- SKILLS -->
 <section id="skills" class="section">
   <h2 class="section-title">## skills_matrix</h2>
 
   <div class="skills-grid">
-    
     <div>
       <p class="comment">// core competencies</p>
 
       <div class="skill">
         <span>Financial Modeling</span>
-        <span>90%</span>
         <div class="bar"><div style="width:90%"></div></div>
       </div>
 
       <div class="skill">
         <span>Equity Valuation</span>
-        <span>85%</span>
         <div class="bar"><div style="width:85%"></div></div>
       </div>
 
       <div class="skill">
         <span>Quantitative Analysis</span>
-        <span>80%</span>
         <div class="bar"><div style="width:80%"></div></div>
       </div>
-
     </div>
 
     <div>
@@ -83,6 +81,32 @@
         <span>Power BI</span>
         <span>SmartPLS</span>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="section">
+  <h2 class="section-title">## project_archive</h2>
+
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <h3>StockWise</h3>
+      <p>Inventory management system designed to optimize stock control and financial tracking for SMEs.</p>
+      <div class="tags">SQL • Python • Inventory Logic</div>
+    </div>
+
+    <div class="project-card">
+      <h3>StockWise Data Schema</h3>
+      <p>Designed relational database schema for StockWise including ER modeling, normalization, and query optimization.</p>
+      <div class="tags">Database Design • ERD • Normalization</div>
+    </div>
+
+    <div class="project-card">
+      <h3>Green Finance Research</h3>
+      <p>Applied SmartPLS and Python for quantitative analysis in a green finance research project using structural equation modeling.</p>
+      <div class="tags">SmartPLS • Python • SEM • Data Analysis</div>
     </div>
 
   </div>
@@ -98,10 +122,8 @@
     <textarea name="message" rows="5" placeholder="> Your Message"></textarea>
     <button type="submit" class="btn">SEND_MESSAGE()</button>
   </form>
-
 </section>
 
 <script src="script.js"></script>
 </body>
 </html>
-
