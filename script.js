@@ -13,20 +13,18 @@ let isDeleting = false;
 
 function typeEffect() {
 
-  const currentText = roles[roleIndex];
+  const current = roles[roleIndex];
 
   if (!isDeleting) {
-    // Typing
-    typingElement.textContent = currentText.substring(0, charIndex + 1);
+    typingElement.textContent = current.substring(0, charIndex + 1);
     charIndex++;
 
-    if (charIndex === currentText.length) {
+    if (charIndex === current.length) {
       setTimeout(() => isDeleting = true, 1200);
     }
 
   } else {
-    // Deleting
-    typingElement.textContent = currentText.substring(0, charIndex - 1);
+    typingElement.textContent = current.substring(0, charIndex - 1);
     charIndex--;
 
     if (charIndex === 0) {
