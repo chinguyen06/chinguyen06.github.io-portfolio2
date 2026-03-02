@@ -258,3 +258,44 @@ nav a:hover{
   }
 
 }
+/* ================= ABOUT SECTION ================= */
+
+.about-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+  align-items:flex-start;
+}
+
+.about-text p{
+  margin-bottom:20px;
+  line-height:1.7;
+  color:#aaa;
+}
+
+/* terminal style */
+.terminal-box{
+  background:#111;
+  border:1px solid #222;
+  padding:20px;
+  font-size:0.9rem;
+  position:relative;
+}
+
+.terminal-command{
+  color:#ff2ea6;
+  margin-bottom:10px;
+}
+
+.terminal-box pre{
+  color:#ccc;
+  font-family:'Share Tech Mono', monospace;
+  white-space:pre-wrap;
+}
+
+/* responsive */
+@media(max-width:900px){
+  .about-grid{
+    grid-template-columns:1fr;
+  }
+}
