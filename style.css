@@ -7,7 +7,17 @@
 
 body{
   font-family:'Share Tech Mono', monospace;
-  background:#0c0a16;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(12,10,22,0.95) 0%,
+      rgba(12,10,22,0.7) 40%,
+      rgba(12,10,22,0.3) 70%,
+      rgba(12,10,22,0) 100%
+    ),
+    url("assets/space.gif") center bottom / cover no-repeat fixed;
+
   color:#ccc;
   scroll-behavior:smooth;
   overflow-x:hidden;
