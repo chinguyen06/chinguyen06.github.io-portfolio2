@@ -336,3 +336,69 @@ button{
   }
 
 }
+/* ================= TERMINAL UPGRADE ================= */
+
+.terminal-box{
+  background:#0f0f18;
+  border:1px solid #1f1f2e;
+  border-radius:8px;
+  overflow:hidden;
+  font-size:0.85rem;
+  box-shadow:0 0 20px rgba(255,46,166,0.1);
+}
+
+.terminal-header{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  background:#151526;
+  padding:8px 12px;
+  border-bottom:1px solid #222;
+}
+
+.dot{
+  width:10px;
+  height:10px;
+  border-radius:50%;
+}
+
+.red{ background:#ff5f56; }
+.yellow{ background:#ffbd2e; }
+.green{ background:#27c93f; }
+
+.terminal-title{
+  margin-left:10px;
+  font-size:0.75rem;
+  color:#777;
+}
+
+.terminal-content{
+  padding:15px 20px;
+}
+
+.terminal-command{
+  color:#ff2ea6;
+  margin-bottom:10px;
+}
+
+pre{
+  white-space:pre-wrap;
+  line-height:1.6;
+}
+
+/* Syntax highlight */
+.key{
+  color:#ff2ea6;
+}
+
+.value{
+  color:#9cdcfe;
+}
+
+.array{
+  color:#ce9178;
+}
+
+.highlight{
+  color:#4ec9b0;
+}
