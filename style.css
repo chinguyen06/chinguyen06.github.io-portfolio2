@@ -404,8 +404,8 @@ pre{
 }
 
 .hero-image img{
-  width: 250px;
-  border-radius: 50%;
+  width: 280px;
+  border-radius: 10%;
 
   /* glow nhẹ */
   box-shadow: 0 0 25px rgba(255,46,166,0.4);
