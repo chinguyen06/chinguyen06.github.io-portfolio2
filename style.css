@@ -402,3 +402,21 @@ pre{
 .highlight{
   color:#4ec9b0;
 }
+
+.hero-image img{
+  width: 250px;
+  border-radius: 50%;
+
+  /* glow nhẹ */
+  box-shadow: 0 0 25px rgba(255,46,166,0.4);
+
+  /* animation mượt */
+  animation: floatSmooth 4s ease-in-out infinite;
+}
+
+/* chuyển động lên xuống nhẹ */
+@keyframes floatSmooth{
+  0%   { transform: translateY(0px); }
+  50%  { transform: translateY(-12px); }
+  100% { transform: translateY(0px); }
+}
